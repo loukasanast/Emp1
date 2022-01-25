@@ -151,14 +151,14 @@ public class Main {
         }
     }
 
-    private static void getEmployeeData(Employee updateEmployee) {
+    private static void getEmployeeData(Employee employee) {
         System.out.println("Please enter a first name");
 
         while(true) {
             String tempFirstName = scanner.nextLine().strip();
 
             if(!tempFirstName.isBlank()) {
-                updateEmployee.setFirstName(tempFirstName);
+                employee.setFirstName(tempFirstName);
                 break;
             } else {
                 System.out.println("Please enter a valid first name");
@@ -171,7 +171,7 @@ public class Main {
             String tempLastName = scanner.nextLine().strip();
 
             if(!tempLastName.isBlank()) {
-                updateEmployee.setLastName(tempLastName);
+                employee.setLastName(tempLastName);
                 break;
             } else {
                 System.out.println("Please enter a valid last name");
@@ -184,7 +184,7 @@ public class Main {
             String tempPosition = scanner.nextLine().strip();
 
             if(!tempPosition.isBlank()) {
-                updateEmployee.setPosition(tempPosition);
+                employee.setPosition(tempPosition);
                 break;
             } else {
                 System.out.println("Please enter a valid position");
@@ -195,7 +195,7 @@ public class Main {
 
         while(true) {
             try {
-                updateEmployee.setSalary(Double.parseDouble(scanner.nextLine()));
+                employee.setSalary(Double.parseDouble(scanner.nextLine()));
                 break;
             } catch(NumberFormatException e) {
                 System.out.println("Please enter a valid number");
