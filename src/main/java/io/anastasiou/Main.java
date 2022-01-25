@@ -82,6 +82,11 @@ public class Main {
             }
         }
 
+        if(new EmployeeDAO(conn).getById(deleteId) == null) {
+            System.out.println("Please enter a valid ID");
+            return;
+        }
+
         new EmployeeDAO(conn).delete(deleteId);
         System.out.printf("Employee with ID '%d' was deleted successfully%n", deleteId);
     }
@@ -103,6 +108,7 @@ public class Main {
         Employee updateEmployee = new EmployeeDAO(conn).getById(updateId);
 
         if(updateEmployee == null) {
+            System.out.println("Please enter a valid ID");
             return;
         }
 
